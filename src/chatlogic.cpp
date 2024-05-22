@@ -17,12 +17,6 @@ ChatLogic::ChatLogic()
     //// STUDENT CODE
     ////
 
-    // create instance of chatbot
-    _chatBot = new ChatBot("../images/chatbot.png");
-
-    // add pointer to chatlogic so that chatbot answers can be passed on to the GUI
-    _chatBot->SetChatLogicHandle(this);
-
     ////
     //// EOF STUDENT CODE
 }
@@ -224,6 +218,12 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
   	// this one i missed so hard, it was a few hours till i notice
   	chatBot.SetChatLogicHandle(this);
     rootNode->MoveChatbotHere(std::move(chatBot));
+
+    // Testing copy constructors
+    // ChatBot testChatBot1("../images/chatbot.png");
+    // ChatBot testChatBot2(testChatBot1);
+    // ChatBot testChatBot3("../images/chatbot.png");
+    // testChatBot3 = testChatBot1;
     ////
     //// EOF STUDENT CODE
 }
